@@ -9,6 +9,7 @@ public interface StudentsService {
 	Students saveStudents(Students student);
 	
 	List<Students> findAll();
+	StudentsDto getStudents(long id);
 	
 	void deleteStudents(Long id);
 

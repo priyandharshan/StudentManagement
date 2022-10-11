@@ -35,6 +35,26 @@ public class StudentsServiceImplement implements StudentsService {
 		studentRepository.deleteById(id);
 	}
 
+	@Override
+	public StudentsDto getStudents(long id) {
+		
+		Students student=studentRepository.findById(id).get();
+		StudentsDto studentDto=new StudentsDto();
+		studentDto.setId(student.getId());
+		studentDto.setFirstName(student.getLastName());
+		studentDto.setLastName(student.getLastName());
+		studentDto.setEmail(student.getEmail());
+		studentDto.setDateOfBirth(student.getDateOfBirth());
+		
+		AddressDto addressDto=new AddressDto();
+		addressDto.setId(student.getAddress().getId());
+		addressDto.setStreetName(student.getAddress().getSteetName());
+		addressDto.setCity(student.getAddress().getCity());
+		studentDto.setAddressDto(addressDto);
+		
+		return studentDto;
+	}
+
 
 
 

@@ -30,7 +30,7 @@ public class SwaggerConfig {
 	private ApiInfo metaApi()
 	{
 		return new  ApiInfoBuilder()
-				.title("Sagger configuration")
+				.title("Swagger configuration")
 				.description("Simple Crud Opearation")
 				.version("1.0.0").build();
 		
